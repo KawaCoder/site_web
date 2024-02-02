@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Coucou</title>
+    <link rel="stylesheet" href="styles_srx.css" id="style">
+    <style>
+        /* Add any additional styles you need here */
+    </style>
+</head>
+
+<body>
+
+    <script>
+        var currentStylesheet = 1; // Variable to track the current stylesheet
+        var cursorElements = []; // Array to store cursor elements
+        var cursorInterval; // Variable to store the interval for cursor animation
+
+        function toggleCSS() {
+            var stylesheet = document.getElementById('style');
+
+            // Toggle between different CSS files based on the current state
+            if (currentStylesheet === 1) {
+                stylesheet.href = 'styles_relax.css';
+                currentStylesheet = 2;
+                activateCursorScript();
+            } else {
+                stylesheet.href = 'styles_srx.css';
+                currentStylesheet = 1;
+                deactivateCursorScript();
+            }
+        }
+
+
+        function createCursorElement(id, x, y, width, height, imageUrl) {
+            var cursorElement = document.createElement('div');
+            cursorElement.id = id;
+            cursorElement.style.position = 'absolute';
+            cursorElement.style.left = x + 'px';
+            cursorElement.style.top = y + 'px';
+            cursorElement.style.width = width + 'px';
+            cursorElement.style.height = height + 'px';
+            cursorElement.innerHTML = "<img src='" + imageUrl + "' width=" + width + " height=" + height + " border=0>";
+            document.body.appendChild(cursorElement);
+            cursorElements.push(cursorElement);
+        }
+
+        function moveCursorElement(id, x, y) {
+            var cursorElement = document.getElementById(id);
+            cursorElement.style.left = x + 'px';
+            cursorElement.style.top = y + 'px';
+        }
+
+        function activateCursorScript() {
+            if (cursorInterval) {
+                clearInterval(cursorInterval);
+            }
+
+            // Your cursor script code here
+
+            var A = document.getElementById;
+            var B = document.all;
+            var C = document.layers;
+            var T1 = ["ncb.png", 20, 20, "nca.png", 20, 20, "ncb.png", 20, 20, "nca.png", 20, 20, "ncb.png", 20, 20, "nca.png", 20, 20, "ncb.png", 20, 20, "otw.gif", 45, 45];
+
+            var offsetx = 0; // x offset of trail from mouse pointer
+            var offsety = 0; // y offset of trail from mouse pointer
+
+            var nos = parseInt(T1.length / 3);
+            var rate = 10;
+            var ie5fix1 = 0;
+            var ie5fix2 = 0;
+            var rightedge = B ? document.body.clientWidth - T1[1] : window.innerWidth - T1[1] - 20;
+            var bottomedge = B ? document.body.scrollTop + document.body.clientHeight - T1[2] : window.pageYOffset + window.innerHeight - T1[2];
+
+            for (var i = 0; i < nos; i++) {
+                createCursorElement("CUR" + i, i * 10, i * 10, T1[i * 3 + 1], T1[i * 3 + 2], T1[i * 3]);
+            }
+
+            function cycle() {
+                for (var i = 0; i < nos - 1; i++) {
+                    moveCursorElement("CUR" + i, getXpos("CUR" + (i + 1)), getYpos("CUR" + (i + 1)));
+                }
+            }
+
+            function newPos(e) {
+                moveCursorElement("CUR" + (nos - 1), (B) ? event.clientX + ie5fix1 : e.pageX + 2, (B) ? event.clientY + ie5fix2 : e.pageY + 2);
+            }
+
+            function getXpos(N) {
+                return parseInt(document.getElementById(N).style.left);
+            }
+
+            function getYpos(N) {
+                return parseInt(document.getElementById(N).style.top);
+            }
+
+            function getedgesIE() {
+                rightedge = document.body.clientWidth - T1[1];
+                bottomedge = document.body.scrollHeight - T1[2];
+            }
+
+            if (B) {
+                window.onload = getedgesIE;
+                window.onresize = getedgesIE;
+            }
+
+            if (document.layers) document.captureEvents(Event.MOUSEMOVE);
+            document.onmousemove = newPos;
+            cursorInterval = setInterval(cycle, rate);
+        }
+
+        function deactivateCursorScript() {
+            clearInterval(cursorInterval);
+
+            for (var i = 0; i < cursorElements.length; i++) {
+                var cursorElement = cursorElements[i];
+                document.body.removeChild(cursorElement);
+            }
+
+            cursorElements = [];
+            document.onmousemove = null;
+        }
+    </script>
+
+
+    <div class="topnav">
+        <a href="index.html">Accueil</a>
+        <a class="active" href="quisuisje.html">Qui suis-je?</a>
+        <a href="#projets">Projets</a>
+        <a href="#contact">Contact</a>
+    </div>
+
+
+
+    <div class="centered">
+        <button onclick="toggleCSS()" class="button-54" role="button">Mode Fun</button>
+    </div>
+
+
+    <div class="content-container">
+        <h1 class="centered" id="qui-suis-je">Qui suis-je?</h1>
+        <p><a href="https://hits.sh/github.com/KawaCoder">
+                <img src="https://hits.sh/github.com/KawaCoder.svg?style=flat&label=Views" />
+            </a></p>
+        <h2>Scolarité</h2>
+        Je suis actuellement en Terminale générale. Voici mes spécialités:
+        <ul style="list-style: disc; ";>
+            <li>Mathématiques</li>
+            <li>NSI</li>
+        </ul>
+
+            <br>
+            <b>Options</b>
+        <ul style="list-style: disc; ";>
+
+            <li>Maths expertes</li>
+            <li>Grec <3</li>
+        </ul>
+
+        <h2>Sur Internet</h2>
+        Depuis 2018 je poste des programmes et collabore a des projets open-source sur Github.
+        Je m'engage pour une ouverture des code-sources et je souhaite qu'internet reste un espace où l'utilisateur est libre.
+        
+        <br>
+        <br>
+
+        <h2>À propos de moi</h2>
+        <h2> J'adore Linux 🐧</h2>
+        <b>Être maître de son système</b> est une valeur très importante selon moi! Pour bidouiller le
+        système, ou le customiser!
+        <h2> Je m'intéresse beaucoup à la cyber-sécurité 👾</h2>
+        Tout ce qui est connecté peut être hacké 😎
+
+        <h2> Je suis à fond derrière les <a href="https://www.chatons.org/" target="_blank">Chatons</a>!</h2>
+
+        Les <b>Chatons</b> est une association qui regroupe des services libres et alternatifs en
+        ligne et qui respectent une certaine éthique.
+
+
+
+
+</body>
+
+</html>
