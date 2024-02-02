@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Coucou</title>
+    <title>KawaCoder | Projets</title>
     <link rel="stylesheet" href="styles_srx.css" id="style">
     <style>
         /* Add any additional styles you need here */
@@ -24,24 +24,14 @@
             if (currentStylesheet === 1) {
                 stylesheet.href = 'styles_relax.css';
                 currentStylesheet = 2;
-                updateWelcomeBanner();
                 activateCursorScript();
             } else {
                 stylesheet.href = 'styles_srx.css';
                 currentStylesheet = 1;
-                updateWelcomeBanner();
                 deactivateCursorScript();
             }
         }
 
-        function updateWelcomeBanner() {
-            var welcomeImage = document.getElementById('welcome-image');
-            if (currentStylesheet === 1) {
-                welcomeImage.src = 'srx_banner.png'; // Change to the image for 'styles_relax.css'
-            } else {
-                welcomeImage.src = 'relax_banner.png'; // Change to the image for 'styles_srx.css'
-            }
-        }
 
         function createCursorElement(id, x, y, width, height, imageUrl) {
             var cursorElement = document.createElement('div');
@@ -67,14 +57,15 @@
                 clearInterval(cursorInterval);
             }
 
+            // Your cursor script code here
 
             var A = document.getElementById;
             var B = document.all;
             var C = document.layers;
-            var T1 = ["ncb.png", 20, 20, "nca.png", 20, 20, "ncb.png", 20, 20, "nca.png", 20, 20, "ncb.png", 20, 20, "nca.png", 20, 20, "ncb.png", 20, 20, "otw.gif", 50, 50];
+            var T1 = ["ncb.png", 20, 20, "nca.png", 20, 20, "ncb.png", 20, 20, "nca.png", 20, 20, "ncb.png", 20, 20, "nca.png", 20, 20, "ncb.png", 20, 20, "otw.gif", 45, 45];
 
-            var offsetx = 0;
-            var offsety = 0;
+            var offsetx = 0; // x offset of trail from mouse pointer
+            var offsety = 0; // y offset of trail from mouse pointer
 
             var nos = parseInt(T1.length / 3);
             var rate = 10;
@@ -135,90 +126,63 @@
 
 
     <div class="topnav">
-        <a class="active" href="#accueil">Accueil</a>
+        <a href="index.html">Accueil</a>
         <a href="quisuisje.html">Qui suis-je?</a>
-        <a href="#projets">Projets</a>
+        <a class="active" href="projets.html">Projets</a>
         <a href="#contact">Contact</a>
     </div>
 
 
-    <div class="content-container">
+
     <div class="centered">
-        <h1>Kawa Coder</h1>
-        <img id="welcome-image" src="https://github.com/KawaCoder/KawaCoder/assets/67145585/9d76dc84-b22f-4d24-8c2a-12049b19963c" alt="bienvenue"
-            style="margin-top: 3vw; max-width:70%; max-height:70%;">
-
-        <br>
-        <br>
-        <br>
-
-
-        <a href="https://hits.sh/github.com/KawaCoder">
-            <img src="https://hits.sh/github.com/KawaCoder.svg?style=flat&label=Views" />
-        </a>
-        <br>
-        <br>
         <button onclick="toggleCSS()" class="button-54" role="button">Mode Fun</button>
     </div>
 
 
+    <div class="content-container">
+        <h1 class="centered">Mes projets Informatiques</h1>
+        <h2>Scolarité</h2>
+        Je suis actuellement en Terminale générale. Voici mes spécialités:
+        <ul style="list-style: disc; ";>
+            <li>Mathématiques</li>
+            <li>NSI</li>
+        </ul>
 
-    <table align="center">
-        <tr>
-            <td>
-                <rectangle>
-                    <a href="quisuisje.html">
+            <br>
+            <b>Options</b>
+        <ul style="list-style: disc; ";>
 
-                        <!-- ▼  ▼ https://thebrandsmen.com/css-image-hover-effects/-->
-                        <shrink>
-                            <img src="profile.png" width="250" height="250">
-                        </shrink>
-                    </a>
-                </rectangle>
-            </td>
+            <li>Maths expertes</li>
+            <li>Grec <3</li>
+        </ul>
 
-            <td>
-                <rectangle>
-                    <a href="projets.html">
+        <h2>Sur Internet</h2>
+        <div class="tenor-gif-embed" data-postid="16730883" data-share-method="host" data-aspect-ratio="1.0596" data-width="40%"><a href="https://tenor.com/view/hacker-pc-meme-matrix-codes-gif-16730883">Hacker Pc GIF</a>from <a href="https://tenor.com/search/hacker-gifs">Hacker GIFs</a></div> <script type="text/javascript" async src="https://tenor.com/embed.js"></script>
 
-                        <!-- ▼  ▼ https://thebrandsmen.com/css-image-hover-effects/-->
-                        <shrink>
-                            <img src="src/index/hat.png" width="250" height="250">
-                        </shrink>
-                    </a>
-                </rectangle>
-            </td>
-        </tr>
+        Depuis 2018 je poste des programmes et collabore a des projets open-source sur Github.
+        Je m'engage pour une ouverture des code-sources et je souhaite qu'internet reste un espace où l'utilisateur est libre.
+        
+        <h4><a href="https://github.com/KawaCoder" target="_blank">Ma page Github</a></h4>
+        <br>
+        <br>
 
-        <tr>
-            <td>
-                Qui suis-je?
-            </td>
-            <td>
-                Mes Projets
-            </td>
+        <h2>À propos de moi</h2>
+        <h2> J'adore Linux 🐧</h2>
+        <b>Être maître de son système</b> est une valeur très importante selon moi! Pour bidouiller le
+        système, ou le customiser!
+        <h2> Je m'intéresse beaucoup à la cyber-sécurité 👾</h2>
+        Tout ce qui est connecté peut être hacké 😎
 
-        </tr>
+        <h2> Je suis à fond derrière les <a href="https://www.chatons.org/" target="_blank">Chatons</a>! 😺</h2>
 
-        <tr>
-            <td>
-                <rectangle>
-                    <a href="orientation.html">
-
-                        <!-- ▼  ▼ https://thebrandsmen.com/css-image-hover-effects/-->
-                        <shrink>
-                            <img src="src/index/hat.png" width="250" height="250">
-
-                        </shrink>
-                    </a>
-                </rectangle>
-            </td>
-
-            <td>
+        Les <b>Chatons</b> est une association qui regroupe des services libres et alternatifs en
+        ligne et qui respectent une certaine éthique.
 
 
-            </div>
-
+        <br>
+        <br>
+        <br>
+        <br>
 </body>
 
 </html>
