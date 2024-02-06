@@ -4,6 +4,7 @@ body{
     font-family: 'Comic', cursive, sans-serif;
     background-color: #0c125c;
     color: whitesmoke;
+    cursor:none;
 }
 
 h2{
@@ -22,14 +23,50 @@ a{
 }
 
 
+
+
+.collapsible {
+  background-color: #777;
+  color: white;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+}
+
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+
+.active, .collapsible:hover {
+  background-color: #555;
+}
+
+.content {
+  padding: 0 18px;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+  background-color: #f1f1f1;
+}
+
+
+
 table, td, th{
+  vertical-align:top;
   text-align: center;
   border: 1px solid;
   border-color: yellow;
 }
 
 td{
-padding: 2vw;
+padding: 0.5vw;
 font-weight: bolder;
 }
 
@@ -73,7 +110,7 @@ shrink img:hover {
 
 
 .content-container {
-  max-width: 800px; /* Adjust the max-width according to your design */
+  max-width: 900px; /* Adjust the max-width according to your design */
   margin: 0 auto; /* Center the content container */
   padding-left: 20px; /* Responsive left padding */
   padding-right: 20px; /* Optional: Responsive right padding */
@@ -114,6 +151,11 @@ shrink img:hover {
     }
   }
 
+
+p{
+color: black;
+
+}
 
 ul{
 list-style: none

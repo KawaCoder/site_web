@@ -57,12 +57,10 @@
                 clearInterval(cursorInterval);
             }
 
-            // Your cursor script code here
-
             var A = document.getElementById;
             var B = document.all;
             var C = document.layers;
-            var T1 = ["ncb.png", 20, 20, "nca.png", 20, 20, "ncb.png", 20, 20, "nca.png", 20, 20, "ncb.png", 20, 20, "nca.png", 20, 20, "ncb.png", 20, 20, "otw.gif", 45, 45];
+            var T1 = ["ncb.png", 20, 20, "nca.png", 20, 20, "ncb.png", 20, 20, "nca.png", 20, 20, "ncb.png", 20, 20, "nca.png", 20, 20, "ncb.png", 20, 20, "otw.gif", 50, 20];
 
             var offsetx = 0; // x offset of trail from mouse pointer
             var offsety = 0; // y offset of trail from mouse pointer
@@ -122,6 +120,15 @@
             cursorElements = [];
             document.onmousemove = null;
         }
+
+
+        function toggleText() {
+            var textContainer = document.querySelector('.text-container');
+
+            // Alterner les classes pour déclencher la transition
+            textContainer.classList.toggle("collapsed");
+        }
+
     </script>
 
 
@@ -141,48 +148,143 @@
 
     <div class="content-container">
         <h1 class="centered">Mes projets Informatiques</h1>
-        <h2>Scolarité</h2>
-        Je suis actuellement en Terminale générale. Voici mes spécialités:
-        <ul style="list-style: disc; ";>
-            <li>Mathématiques</li>
-            <li>NSI</li>
-        </ul>
 
-            <br>
-            <b>Options</b>
-        <ul style="list-style: disc; ";>
 
-            <li>Maths expertes</li>
-            <li>Grec <3</li>
-        </ul>
 
-        <h2>Sur Internet</h2>
-        <div class="tenor-gif-embed" data-postid="16730883" data-share-method="host" data-aspect-ratio="1.0596" data-width="40%"><a href="https://tenor.com/view/hacker-pc-meme-matrix-codes-gif-16730883">Hacker Pc GIF</a>from <a href="https://tenor.com/search/hacker-gifs">Hacker GIFs</a></div> <script type="text/javascript" async src="https://tenor.com/embed.js"></script>
 
-        Depuis 2018 je poste des programmes et collabore a des projets open-source sur Github.
-        Je m'engage pour une ouverture des code-sources et je souhaite qu'internet reste un espace où l'utilisateur est libre.
-        
-        <h4><a href="https://github.com/KawaCoder" target="_blank">Ma page Github</a></h4>
+        <table align="center">
+            <tr>
+                <td>
+                    <rectangle>
+                        <a target="_blank" href="https://github.com/KawaCoder/GhostRecon">
+
+                            <!-- ▼  ▼ https://thebrandsmen.com/css-image-hover-effects/-->
+                            <shrink>
+                                <img src="ghostrecon.png">
+                            </shrink>
+                        </a>
+                    </rectangle>
+                </td>
+
+                <td>
+                    <rectangle>
+                        <a target="_blank" href="https://github.com/KawaCoder/RIPP">
+
+                            <!-- ▼  ▼ https://thebrandsmen.com/css-image-hover-effects/-->
+                            <shrink>
+                                <img src="ripp.png">
+                            </shrink>
+                        </a>
+                    </rectangle>
+                </td>
+
+                <td>
+                    <rectangle>
+                        <a target="_blank" href="https://github.com/KawaCoder/No_context-book-generator">
+
+                            <!-- ▼  ▼ https://thebrandsmen.com/css-image-hover-effects/-->
+                            <shrink>
+                                <img src="bookgen.png">
+                            </shrink>
+                        </a>
+                    </rectangle>
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <button class="collapsible">GhostRecon 🔎<span style="float:right;">&#9664</span></button>
+                    <div class="content">
+                        <p>GhostRecon (non pas le jeu) est un projet que j'ai initié en 2018. Il s'agit d'un framework
+                            Shell pour faire de l'OSINT. J'ai alors appris à gérer les différentes versions d'un
+                            programme ,
+                            avec un script que j'ai créé pour le mettre à jour, mais aussi récupérer des informations de
+                            version ;
+                            j'ai énormément progressé en scripting grâce à ce projet! PS: j'ai aussi connu la 'fame' sur
+                            internet car
+                            le programme possède plus de 200 stargazers ⭐ sur Github.
+                        </p>
+                    </div>
+                </td>
+                <td>
+                    <button class="collapsible">R.I.P.P.<span style="float:right;">&#9664</span></button>
+                    <div class="content">
+                        <p>Really Intelligent Python Phonebook est un gestionnaire de contact pour PC codé en langage
+                            Python.
+                            Il possède des fonctionalités basiques comme l'ajout et la recherche de contacts dans une
+                            base de données,
+                            et permet aussi d'exporter/d'importer des bases de données contenant les contacts grâce à
+                            l'extension .ripp
+                        </p>
+                    </div>
+                </td>
+                <td>
+                    <button class="collapsible">No context book generator<span
+                            style="float:right;">&#9664</span></button>
+                    <div class="content">
+                        <p>No Context Book Generator vous permettra de faire la maquette d'un livre de 30 millions de
+                            pages max.
+                            en PDF avec des phrases aléatoires, tout en ayant la possibilité de paramétrer vos
+                            personnages,
+                            le nombre de paragraphes par page, ou encore le nombre de ligne par paragraphe.
+                            Bien-sûr ne pas s'attendre à une histoire folle puisque ce sont des phrases aléatoires.
+                        </p>
+                    </div>
+                </td>
+
+            </tr>
+
+            <tr>
+                <td>
+                    <rectangle>
+                        <a target="_blank" href="https://github.com/KawaCoder/Very_Cool_Local_Mailing_App">
+
+                            <!-- ▼  ▼ https://thebrandsmen.com/css-image-hover-effects/-->
+                            <shrink>
+                                <img src="mail.png">
+                            </shrink>
+                        </a>
+                    </rectangle>
+                </td>
+
+            </tr>
+            <tr>
+                <td>
+                    <button class="collapsible">Serveur de messagerie<span style="float:right;">&#9664</span></button>
+                    <div class="content">
+                        <p>Ce programme en java permet d'échanger des messages avec vos appareils locaux. Il stocke les
+                            messages et gère la connexion des clients.
+                        </p>
+                    </div>
+                </td>
+
+            </tr>
+
+
+        </table>
+        <script>
+            var coll = document.getElementsByClassName("collapsible");
+            var i;
+
+            for (i = 0; i < coll.length; i++) {
+                coll[i].addEventListener("click", function () {
+                    this.classList.toggle("active");
+                    var content = this.nextElementSibling;
+                    if (content.style.maxHeight) {
+                        content.style.maxHeight = null;
+                    } else {
+                        content.style.maxHeight = content.scrollHeight + "px";
+                    }
+                });
+            }
+        </script>
+
+        <br>
+        <br>
         <br>
         <br>
 
-        <h2>À propos de moi</h2>
-        <h2> J'adore Linux 🐧</h2>
-        <b>Être maître de son système</b> est une valeur très importante selon moi! Pour bidouiller le
-        système, ou le customiser!
-        <h2> Je m'intéresse beaucoup à la cyber-sécurité 👾</h2>
-        Tout ce qui est connecté peut être hacké 😎
-
-        <h2> Je suis à fond derrière les <a href="https://www.chatons.org/" target="_blank">Chatons</a>! 😺</h2>
-
-        Les <b>Chatons</b> est une association qui regroupe des services libres et alternatifs en
-        ligne et qui respectent une certaine éthique.
-
-
-        <br>
-        <br>
-        <br>
-        <br>
+    </div>
 </body>
 
 </html>
