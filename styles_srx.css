@@ -13,9 +13,21 @@ h2{
   overflow: hidden;
 }
 
+
+.topnav p {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  font-weight: bold;
+  font-size: 25px;
+  margin: 0;
+}
+
+
 /* Style the links inside the navigation bar */
 .topnav a {
-  float: left;
+  float: right;
   color: #f2f2f2;
   text-align: center;
   padding: 14px 16px;
@@ -37,7 +49,7 @@ h2{
 
 
 img {
-  max-width: 100%;
+  max-width: 90%;
   height: auto;
 }
 
@@ -68,12 +80,14 @@ img {
 
 
 table{
+  width: 100%;
   text-align: center;
+  table-layout: fixed;
 }
 
 td{
   vertical-align:top;
-  padding: 0.5vw;
+  padding-bottom: 1%;
   font-weight: bolder;
 }
 
@@ -92,10 +106,10 @@ shrink img:hover {
 
 
 .content-container {
-  max-width: 900px; /* Adjust the max-width according to your design */
+  max-width: 60vw; /* Adjust the max-width according to your design */
   margin: 0 auto; /* Center the content container */
-  padding-left: 20px; /* Responsive left padding */
-  padding-right: 20px; /* Optional: Responsive right padding */
+  padding-left: 10px; /* Responsive left padding */
+  padding-right: 10px; /* Optional: Responsive right padding */
 }
 
 

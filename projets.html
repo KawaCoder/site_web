@@ -60,7 +60,8 @@
             var A = document.getElementById;
             var B = document.all;
             var C = document.layers;
-            var T1 = ["ncb.png", 20, 20, "nca.png", 20, 20, "ncb.png", 20, 20, "nca.png", 20, 20, "ncb.png", 20, 20, "nca.png", 20, 20, "ncb.png", 20, 20, "otw.gif", 50, 20];
+            var cursorImagePaths = ["src/ncb.png", "src/nca.png", "src/otw.gif"];
+            var T1 = [cursorImagePaths[0], 20, 20, cursorImagePaths[1], 20, 20, cursorImagePaths[0], 20, 20, cursorImagePaths[1], 20, 20, cursorImagePaths[0], 20, 20, cursorImagePaths[1], 20, 20, cursorImagePaths[0], 20, 20, cursorImagePaths[2], 50, 20];
 
             var offsetx = 0; // x offset of trail from mouse pointer
             var offsety = 0; // y offset of trail from mouse pointer
@@ -133,11 +134,13 @@
 
 
     <div class="topnav">
-        <a href="index.html">Accueil</a>
+        <p>KawaCoder</p>
+        <a class="active" href="#accueil">Accueil</a>
         <a href="quisuisje.html">Qui suis-je?</a>
-        <a class="active" href="projets.html">Projets</a>
-        <a href="#contact">Contact</a>
+        <a href="projets.html">Projets</a>
+        <a href="contact.html">Contact</a>
     </div>
+
 
 
 
@@ -160,7 +163,7 @@
 
                             <!-- ▼  ▼ https://thebrandsmen.com/css-image-hover-effects/-->
                             <shrink>
-                                <img src="ghostrecon.png">
+                                <img src="src/projets/ghostrecon.png">
                             </shrink>
                         </a>
                     </rectangle>
@@ -172,7 +175,7 @@
 
                             <!-- ▼  ▼ https://thebrandsmen.com/css-image-hover-effects/-->
                             <shrink>
-                                <img src="ripp.png">
+                                <img src="src/projets/ripp.png">
                             </shrink>
                         </a>
                     </rectangle>
@@ -184,7 +187,7 @@
 
                             <!-- ▼  ▼ https://thebrandsmen.com/css-image-hover-effects/-->
                             <shrink>
-                                <img src="bookgen.png">
+                                <img src="src/projets/bookgen.png">
                             </shrink>
                         </a>
                     </rectangle>
@@ -195,14 +198,13 @@
                 <td>
                     <button class="collapsible">GhostRecon 🔎<span style="float:right;">&#9664</span></button>
                     <div class="content">
-                        <p>GhostRecon (non pas le jeu) est un projet que j'ai initié en 2018. Il s'agit d'un framework
-                            Shell pour faire de l'OSINT. J'ai alors appris à gérer les différentes versions d'un
+                        <p>GhostRecon (non pas le jeu) est un projet que j'ai initié en 2018 avec un collègue sur internet qui m'a cédé la responsabilité totale
+                            de ce projet. Il s'agit d'un framework Shell pour faire de l'OSINT. J'ai alors appris à gérer les différentes versions d'un
                             programme ,
                             avec un script que j'ai créé pour le mettre à jour, mais aussi récupérer des informations de
                             version ;
-                            j'ai énormément progressé en scripting grâce à ce projet! PS: j'ai aussi connu la 'fame' sur
-                            internet car
-                            le programme possède plus de 200 stargazers ⭐ sur Github.
+                            j'ai énormément progressé en scripting grâce à ce projet! Ce projet est reconnu comme un des principaux frameworks d'OSINT open-source.
+                            Le répository Github a plus de 200 stargazers ⭐ sur Github.
                         </p>
                     </div>
                 </td>
@@ -241,7 +243,29 @@
 
                             <!-- ▼  ▼ https://thebrandsmen.com/css-image-hover-effects/-->
                             <shrink>
-                                <img src="mail.png">
+                                <img src="src/projets/mail.png">
+                            </shrink>
+                        </a>
+                    </rectangle>
+                </td>
+                <td>
+                    <rectangle>
+                        <a target="_blank" href="https://github.com/KawaCoder/plane-spotter">
+
+                            <!-- ▼  ▼ https://thebrandsmen.com/css-image-hover-effects/-->
+                            <shrink>
+                                <img src="src/projets/plane_spotter.png">
+                            </shrink>
+                        </a>
+                    </rectangle>
+                </td>
+                <td>
+                    <rectangle>
+                        <a target="_blank" href="https://github.com/KawaCoder/BattleXploit">
+
+                            <!-- ▼  ▼ https://thebrandsmen.com/css-image-hover-effects/-->
+                            <shrink>
+                                <img src="src/projets/battlexploit.png">
                             </shrink>
                         </a>
                     </rectangle>
@@ -257,9 +281,50 @@
                         </p>
                     </div>
                 </td>
-
+                <td>
+                    <button class="collapsible">Plane spotter<span style="float:right;">&#9664</span></button>
+                    <div class="content">
+                        <p>Script en bash qui utilise des APIs de météo et de données de vol en temps réel pour renvoyer une liste
+                            d'avions susceptibles d'êtres visibles depuis le sol à une potision donnée.
+                        </p>
+                    </div>
+                </td>
+                <td>
+                    <button class="collapsible">BattleXploit<span style="float:right;">&#9664</span></button>
+                    <div class="content">
+                        <p>Ce jeu LAN codé en Java est un jeu de cybersécurité, l'entreprise (joueur 1) doit se défendre contre l'attaquant (joueur 2)
+                            qui dispose de différentes attaques. Il faut faire une attention au budget et au temps d'installation des logiciels (antivirus, pare-feu, etc.)!
+                        </p>
+                    </div>
+                </td>
+                
             </tr>
 
+            <tr>
+                <td>
+                    <rectangle>
+            <a target="_blank" href="https://github.com/KawaCoder/Py_pendu">
+
+                <!-- ▼  ▼ https://thebrandsmen.com/css-image-hover-effects/-->
+                <shrink>
+                    <img src="src/projets/pendu.png">
+                </shrink>
+            </a>
+                    </rectangle>
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <button class="collapsible">Py pendu<span style="float:right;">&#9664</span></button>
+                    <div class="content">
+                        <p>
+                            Un simple jeu de pendu codé en langage Python.
+                        </p>
+                    </div>
+                </td>
+            </tr>
+            
 
         </table>
         <script>
