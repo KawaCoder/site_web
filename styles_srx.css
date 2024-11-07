@@ -1,6 +1,7 @@
 body{
-    font-family: Arial, Helvetica, sans-serif;
-    background-color: #e1e1e1;
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #e1e1e1;
 }
 
 h2{
@@ -159,3 +160,19 @@ ul{
 .centered {
     text-align: center;
   }
+
+#fade {
+  opacity: 0;
+}
+
+#fade-topnav {
+  opacity: 0;
+}
+
+#fade-title {
+  opacity: 0;
+}
+
+#fade-content {
+  opacity: 0;
+}
