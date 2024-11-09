@@ -5,9 +5,8 @@
     <meta charset="UTF-8">
     <title>Contact</title>
     <link rel="stylesheet" href="styles_srx.css" id="style">
-    <style>
-        /* Add any additional styles you need here */
-    </style>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
 </head>
 
 <body>
@@ -24,12 +23,10 @@
             if (currentStylesheet === 1) {
                 stylesheet.href = 'styles_relax.css';
                 currentStylesheet = 2;
-                updateWelcomeBanner();
                 activateCursorScript();
             } else {
                 stylesheet.href = 'styles_srx.css';
                 currentStylesheet = 1;
-                updateWelcomeBanner();
                 deactivateCursorScript();
             }
         }
@@ -37,9 +34,9 @@
         function updateWelcomeBanner() {
             var welcomeImage = document.getElementById('welcome-image');
             if (currentStylesheet === 1) {
-                welcomeImage.src = 'srx_banner.png'; // Change to the image for 'styles_relax.css'
+                welcomeImage.src = 'https://github.com/KawaCoder/KawaCoder/assets/67145585/9d76dc84-b22f-4d24-8c2a-12049b19963c'; // Change to the image for 'styles_relax.css'
             } else {
-                welcomeImage.src = 'relax_banner.png'; // Change to the image for 'styles_srx.css'
+                welcomeImage.src = 'src/accueil/relax_banner.png'; // Change to the image for 'styles_srx.css'
             }
         }
 
@@ -71,7 +68,8 @@
             var A = document.getElementById;
             var B = document.all;
             var C = document.layers;
-            var T1 = ["ncb.png", 20, 20, "nca.png", 20, 20, "ncb.png", 20, 20, "nca.png", 20, 20, "ncb.png", 20, 20, "nca.png", 20, 20, "ncb.png", 20, 20, "otw.gif", 50, 20];
+            var cursorImagePaths = ["src/ncb.png", "src/nca.png", "src/otw.gif"];
+            var T1 = [cursorImagePaths[0], 20, 20, cursorImagePaths[1], 20, 20, cursorImagePaths[0], 20, 20, cursorImagePaths[1], 20, 20, cursorImagePaths[0], 20, 20, cursorImagePaths[1], 20, 20, cursorImagePaths[0], 20, 20, cursorImagePaths[2], 50, 20];
 
             var offsetx = 0;
             var offsety = 0;
@@ -130,7 +128,28 @@
 
             cursorElements = [];
             document.onmousemove = null;
+
         }
+        $(document).ready(function () {
+            $("#fade-topnav").delay(200).animate({ opacity: 1 }, 700);
+            $("#fade-title").delay(400).animate({ opacity: 1 }, 700);
+            $("#fade-content").delay(600).animate({ opacity: 1 }, 700);
+
+            // Fade out effect when clicking on navigation links
+            $("a").on('click', function (event) {
+                var href = $(this).attr('href');
+                if (href) {
+                    event.preventDefault();
+                    $("#fade-title").animate({ opacity: 0 }, 700);
+                    $("#fade").animate({ opacity: 0 }, 700);
+                    $("#fade-content").animate({ opacity: 0 }, function () {
+
+                        window.location.href = href;
+                    });
+                }
+            });
+        });
+
     </script>
 
 
@@ -143,10 +162,11 @@
     </div>
 
     <div class="centered">
-        <button onclick="toggleCSS()" class="button-54" role="button">Mode Fun</button>
     </div>
 
-    <div class="content-container">
+    <div id="fade-content" class="content-container">
+        <button onclick="toggleCSS()" class="button-54" role="button">Mode Fun</button>
+
         <div style="height: 100px;"></div>
 
         <div class="centered">
@@ -160,7 +180,7 @@
 
 
 
-        
+
     </div>
 
 </body>

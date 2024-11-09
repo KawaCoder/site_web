@@ -5,9 +5,8 @@
     <meta charset="UTF-8">
     <title>KawaCoder | Qui Suis-Je?</title>
     <link rel="stylesheet" href="styles_srx.css" id="style">
-    <style>
-        /* Add any additional styles you need here */
-    </style>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
 </head>
 
 <body>
@@ -32,6 +31,14 @@
             }
         }
 
+        function updateWelcomeBanner() {
+            var welcomeImage = document.getElementById('welcome-image');
+            if (currentStylesheet === 1) {
+                welcomeImage.src = 'https://github.com/KawaCoder/KawaCoder/assets/67145585/9d76dc84-b22f-4d24-8c2a-12049b19963c'; // Change to the image for 'styles_relax.css'
+            } else {
+                welcomeImage.src = 'src/accueil/relax_banner.png'; // Change to the image for 'styles_srx.css'
+            }
+        }
 
         function createCursorElement(id, x, y, width, height, imageUrl) {
             var cursorElement = document.createElement('div');
@@ -57,7 +64,6 @@
                 clearInterval(cursorInterval);
             }
 
-            // Your cursor script code here
 
             var A = document.getElementById;
             var B = document.all;
@@ -65,8 +71,8 @@
             var cursorImagePaths = ["src/ncb.png", "src/nca.png", "src/otw.gif"];
             var T1 = [cursorImagePaths[0], 20, 20, cursorImagePaths[1], 20, 20, cursorImagePaths[0], 20, 20, cursorImagePaths[1], 20, 20, cursorImagePaths[0], 20, 20, cursorImagePaths[1], 20, 20, cursorImagePaths[0], 20, 20, cursorImagePaths[2], 50, 20];
 
-            var offsetx = 0; // x offset of trail from mouse pointer
-            var offsety = 0; // y offset of trail from mouse pointer
+            var offsetx = 0;
+            var offsety = 0;
 
             var nos = parseInt(T1.length / 3);
             var rate = 10;
@@ -122,14 +128,35 @@
 
             cursorElements = [];
             document.onmousemove = null;
+
         }
+
+
+        $(document).ready(function () {
+            $("#fade-topnav").delay(200).animate({ opacity: 1 }, 700);
+            $("#fade-title").delay(400).animate({ opacity: 1 }, 700);
+            $("#fade-content").delay(600).animate({ opacity: 1 }, 700);
+
+            // Fade out effect when clicking on navigation links
+            $("a").on('click', function (event) {
+                var href = $(this).attr('href');
+                if (href) {
+                    event.preventDefault();
+                    $("#fade-title").animate({ opacity: 0 }, 700);
+                    $("#fade-content").animate({ opacity: 0 }, 700, function () {
+                        window.location.href = href;
+                    });
+                }
+            });
+        });
+
     </script>
 
 
     <div class="topnav">
         <p>KawaCoder</p>
         <a href="index.html">Accueil</a>
-        <a class="active"href="quisuisje.html">Qui suis-je?</a>
+        <a class="active" href="quisuisje.html">Qui suis-je?</a>
         <a href="projets.html">Projets</a>
         <a href="contact.html">Contact</a>
     </div>
@@ -137,20 +164,21 @@
 
 
 
-    <div class="centered">
+    <div id="fade-title" class="centered">
         <button onclick="toggleCSS()" class="button-54" role="button">Mode Fun</button>
+        <h1 id="qui-suis-je">Qui suis-je?</h1>
     </div>
 
 
-    <div class="content-container">
-        <h1 class="centered" id="qui-suis-je">Qui suis-je?</h1>
+    <div id="fade-content" class="content-container">
         <h2>Scolarité</h2>
         Je suis actuellement en première année de BUT informatique.
 
         <h2>Sur Internet</h2>
 
         Depuis 2018 je poste des programmes et collabore a des projets open-source sur Github.
-        Je m'engage pour une ouverture des code-sources et je souhaite qu'internet reste un espace où l'utilisateur est libre.
+        Je m'engage pour une ouverture des code-sources et je souhaite qu'internet reste un espace où l'utilisateur est
+        libre.
         <h4><a href="https://github.com/KawaCoder" target="_blank">Ma page Github</a></h4>
         <h2>À propos de moi</h2>
         <h2> J'adore Linux 🐧</h2>
@@ -165,7 +193,8 @@
         <h2> Je suis de près les <a href="https://www.chatons.org/" target="_blank">Chatons</a>! 😺</h2>
 
         Les <b>Chatons</b> est une association qui regroupe des services libres et alternatifs en
-        ligne et qui respectent une certaine éthique, cette dernière est décrite sur <a href="https://www.chatons.org/charte" target="_blank">leur site</a>.
+        ligne et qui respectent une certaine éthique, cette dernière est décrite sur <a
+            href="https://www.chatons.org/charte" target="_blank">leur site</a>.
 
 
         <br>

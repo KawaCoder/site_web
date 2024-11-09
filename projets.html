@@ -5,9 +5,8 @@
     <meta charset="UTF-8">
     <title>KawaCoder | Projets</title>
     <link rel="stylesheet" href="styles_srx.css" id="style">
-    <style>
-        /* Add any additional styles you need here */
-    </style>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
 </head>
 
 <body>
@@ -32,6 +31,14 @@
             }
         }
 
+        function updateWelcomeBanner() {
+            var welcomeImage = document.getElementById('welcome-image');
+            if (currentStylesheet === 1) {
+                welcomeImage.src = 'https://github.com/KawaCoder/KawaCoder/assets/67145585/9d76dc84-b22f-4d24-8c2a-12049b19963c'; // Change to the image for 'styles_relax.css'
+            } else {
+                welcomeImage.src = 'src/accueil/relax_banner.png'; // Change to the image for 'styles_srx.css'
+            }
+        }
 
         function createCursorElement(id, x, y, width, height, imageUrl) {
             var cursorElement = document.createElement('div');
@@ -57,14 +64,15 @@
                 clearInterval(cursorInterval);
             }
 
+
             var A = document.getElementById;
             var B = document.all;
             var C = document.layers;
             var cursorImagePaths = ["src/ncb.png", "src/nca.png", "src/otw.gif"];
             var T1 = [cursorImagePaths[0], 20, 20, cursorImagePaths[1], 20, 20, cursorImagePaths[0], 20, 20, cursorImagePaths[1], 20, 20, cursorImagePaths[0], 20, 20, cursorImagePaths[1], 20, 20, cursorImagePaths[0], 20, 20, cursorImagePaths[2], 50, 20];
 
-            var offsetx = 0; // x offset of trail from mouse pointer
-            var offsety = 0; // y offset of trail from mouse pointer
+            var offsetx = 0;
+            var offsety = 0;
 
             var nos = parseInt(T1.length / 3);
             var rate = 10;
@@ -120,15 +128,25 @@
 
             cursorElements = [];
             document.onmousemove = null;
+
         }
+        $(document).ready(function () {
+            $("#fade-topnav").delay(200).animate({ opacity: 1 }, 700);
+            $("#fade-title").delay(400).animate({ opacity: 1 }, 700);
+            $("#fade-content").delay(600).animate({ opacity: 1 }, 700);
 
-
-        function toggleText() {
-            var textContainer = document.querySelector('.text-container');
-
-            // Alterner les classes pour déclencher la transition
-            textContainer.classList.toggle("collapsed");
-        }
+            // Fade out effect when clicking on navigation links
+            $("a").on('click', function (event) {
+                var href = $(this).attr('href');
+                if (href) {
+                    event.preventDefault();
+                    $("#fade-title").animate({ opacity: 0 }, 700);
+                    $("#fade-content").animate({ opacity: 0 }, 700, function () {
+                        window.location.href = href;
+                    });
+                }
+            });
+        });
 
     </script>
 
@@ -142,15 +160,13 @@
     </div>
 
 
-
-
-    <div class="centered">
+    <div id="fade-title" class="centered">
         <button onclick="toggleCSS()" class="button-54" role="button">Mode Fun</button>
+        <h1>Mes projets Informatiques</h1>
     </div>
 
 
-    <div class="content-container">
-        <h1 class="centered">Mes projets Informatiques</h1>
+    <div id="fade-content" class="content-container">
 
 
 
@@ -198,12 +214,15 @@
                 <td>
                     <button class="collapsible">GhostRecon 🔎<span style="float:right;">&#9664</span></button>
                     <div class="content">
-                        <p>GhostRecon (non pas le jeu) est un projet que j'ai initié en 2018 avec un collègue sur internet qui m'a cédé la responsabilité totale
-                            de ce projet. Il s'agit d'un framework Shell pour faire de l'OSINT. J'ai alors appris à gérer les différentes versions d'un
+                        <p>GhostRecon (non pas le jeu) est un projet que j'ai initié en 2018 avec un collègue sur
+                            internet qui m'a cédé la responsabilité totale
+                            de ce projet. Il s'agit d'un framework Shell pour faire de l'OSINT. J'ai alors appris à
+                            gérer les différentes versions d'un
                             programme ,
                             avec un script que j'ai créé pour le mettre à jour, mais aussi récupérer des informations de
                             version ;
-                            j'ai énormément progressé en scripting grâce à ce projet! Ce projet est reconnu comme un des principaux frameworks d'OSINT open-source.
+                            j'ai énormément progressé en scripting grâce à ce projet! Ce projet est reconnu comme un des
+                            principaux frameworks d'OSINT open-source.
                             Le répository Github a plus de 200 stargazers ⭐ sur Github.
                         </p>
                     </div>
@@ -284,7 +303,8 @@
                 <td>
                     <button class="collapsible">Plane spotter<span style="float:right;">&#9664</span></button>
                     <div class="content">
-                        <p>Script en bash qui utilise des APIs de météo et de données de vol en temps réel pour renvoyer une liste
+                        <p>Script en bash qui utilise des APIs de météo et de données de vol en temps réel pour renvoyer
+                            une liste
                             d'avions susceptibles d'êtres visibles depuis le sol à une potision donnée.
                         </p>
                     </div>
@@ -292,24 +312,26 @@
                 <td>
                     <button class="collapsible">BattleXploit<span style="float:right;">&#9664</span></button>
                     <div class="content">
-                        <p>Ce jeu LAN codé en Java est un jeu de cybersécurité, l'entreprise (joueur 1) doit se défendre contre l'attaquant (joueur 2)
-                            qui dispose de différentes attaques. Il faut faire une attention au budget et au temps d'installation des logiciels (antivirus, pare-feu, etc.)!
+                        <p>Ce jeu LAN codé en Java est un jeu de cybersécurité, l'entreprise (joueur 1) doit se défendre
+                            contre l'attaquant (joueur 2)
+                            qui dispose de différentes attaques. Il faut faire une attention au budget et au temps
+                            d'installation des logiciels (antivirus, pare-feu, etc.)!
                         </p>
                     </div>
                 </td>
-                
+
             </tr>
 
             <tr>
                 <td>
                     <rectangle>
-            <a target="_blank" href="https://github.com/KawaCoder/Py_pendu">
+                        <a target="_blank" href="https://github.com/KawaCoder/Py_pendu">
 
-                <!-- ▼  ▼ https://thebrandsmen.com/css-image-hover-effects/-->
-                <shrink>
-                    <img src="src/projets/pendu.png">
-                </shrink>
-            </a>
+                            <!-- ▼  ▼ https://thebrandsmen.com/css-image-hover-effects/-->
+                            <shrink>
+                                <img src="src/projets/pendu.png">
+                            </shrink>
+                        </a>
                     </rectangle>
                 </td>
             </tr>
@@ -324,7 +346,7 @@
                     </div>
                 </td>
             </tr>
-            
+
 
         </table>
         <script>
